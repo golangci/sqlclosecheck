@@ -13,7 +13,8 @@ jobs:
     strategy:
       matrix:
         go-version: [ oldstable, stable ]
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        # windows is ignored because some tests are based on filepath.
+        os: [ubuntu-latest, macos-latest]
     env:
       GOLANGCI_LINT_VERSION: v2.11
     steps:
