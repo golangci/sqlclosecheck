@@ -1,4 +1,4 @@
-# github.com/ryanrolds/sqlclosecheck/testdata/sqlx_examples
+# github.com/golangci/sqlclosecheck/testdata/sqlx_examples
 testdata/sqlx_examples/failure_generics.go:6:21: Rows/Stmt/NamedStmt was not closed
 testdata/sqlx_examples/failure_generics.go:13:21: Rows/Stmt/NamedStmt was not closed
 testdata/sqlx_examples/missing_close.go:10:24: Rows/Stmt/NamedStmt was not closed

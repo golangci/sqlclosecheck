@@ -3,7 +3,7 @@ package analyzer_test
 import (
 	"testing"
 
-	"github.com/ryanrolds/sqlclosecheck/pkg/analyzer"
+	"github.com/golangci/sqlclosecheck/pkg/analyzer"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
@@ -14,9 +14,9 @@ func TestDeferOnlyAnalyzer(t *testing.T) {
 	checker := analyzer.NewDeferOnlyAnalyzer()
 
 	packages := []string{
-		"github.com/ryanrolds/sqlclosecheck/pkg/analyzer/testdata/rows",
-		"github.com/ryanrolds/sqlclosecheck/pkg/analyzer/testdata/stmt",
-		"github.com/ryanrolds/sqlclosecheck/pkg/analyzer/testdata/pgx",
+		"github.com/golangci/sqlclosecheck/pkg/analyzer/testdata/rows",
+		"github.com/golangci/sqlclosecheck/pkg/analyzer/testdata/stmt",
+		"github.com/golangci/sqlclosecheck/pkg/analyzer/testdata/pgx",
 	}
 
 	for _, pkg := range packages {
