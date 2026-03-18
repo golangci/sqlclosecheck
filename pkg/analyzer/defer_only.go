@@ -292,6 +292,10 @@ func getAction(instr ssa.Instruction, targetTypes []any) action {
 			return actionReturned
 		}
 
+		if instr.Addr.Referrers() == nil {
+			return actionNoOp
+		}
+
 		if len(*instr.Addr.Referrers()) == 0 {
 			return actionNoOp
 		}
@@ -378,6 +382,10 @@ func checkDeferred(pass *analysis.Pass, instrs *[]ssa.Instruction, targetTypes [
 				return
 			}
 		case *ssa.Store:
+			if instr.Addr.Referrers() == nil {
+				return
+			}
+
 			if len(*instr.Addr.Referrers()) == 0 {
 				return
 			}
