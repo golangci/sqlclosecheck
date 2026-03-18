@@ -1,6 +1,6 @@
 module github.com/ryanrolds/sqlclosecheck
 
-go 1.24.0
+go 1.25.0
 
 require (
 	github.com/go-sql-driver/mysql v1.7.1

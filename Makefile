@@ -24,5 +24,5 @@ test: build
 	diff -a pgx_examples_results.txt ./testdata/pgx_examples/expected_results.txt
 
 lint:
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.62.2
+	curl -sSfL https://golangci-lint.run/install.sh | sh -s -- v2.11.3
 	./bin/golangci-lint run
