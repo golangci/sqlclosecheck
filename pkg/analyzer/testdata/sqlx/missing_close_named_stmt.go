@@ -1,11 +1,11 @@
-package sqlx_examples
+package sqlx
 
 import (
 	"log"
 )
 
 func missingCloseNamedStmt() {
-	stmt, err := db.PrepareNamed("SELECT * FROM users WHERE id = :id")
+	stmt, err := db.PrepareNamed("SELECT * FROM users WHERE id = :id") // want "Rows/Stmt/NamedStmt was not closed"
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -1,16 +1,18 @@
-package sqlx_examples
+package sqlx
 
 import (
 	"log"
 	"strings"
 )
 
-func nonDeferClose() {
+func correctSqlCloseCheckG[T ~int64]() {
 	age := 27
 	rows, err := db.Queryx("SELECT name FROM users WHERE age=?", age)
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	defer rows.Close()
 
 	names := make([]string, 0)
 	for rows.Next() {
@@ -26,6 +28,4 @@ func nonDeferClose() {
 		log.Fatal(err)
 	}
 	log.Printf("%s are %d years old", strings.Join(names, ", "), age)
-
-	rows.Close()
 }

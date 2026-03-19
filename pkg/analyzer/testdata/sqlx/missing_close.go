@@ -1,18 +1,18 @@
-package sqlx_examples
+package sqlx
 
 import (
 	"log"
 	"strings"
 )
 
-func correctSqlCloseCheckG[T ~int64]() {
+func missingClose() {
 	age := 27
-	rows, err := db.Queryx("SELECT name FROM users WHERE age=?", age)
+	rows, err := db.Queryx("SELECT name FROM users WHERE age=?", age) // want "Rows/Stmt/NamedStmt was not closed"
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	defer rows.Close()
+	// defer rows.Close()
 
 	names := make([]string, 0)
 	for rows.Next() {

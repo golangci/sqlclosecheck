@@ -1,4 +1,4 @@
-package sqlx_examples
+package sqlx
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ func ForgetCloseSqlxStmt(stmt *sqlx.Stmt) {
 }
 
 func (s Server) DeferForgetCloseInOtherFunc() {
-	stmt, err := db.Preparex("SELECT 1")
+	stmt, err := db.Preparex("SELECT 1") // want "Rows/Stmt/NamedStmt was not closed"
 	if err != nil {
 		log.Fatal(err)
 	}

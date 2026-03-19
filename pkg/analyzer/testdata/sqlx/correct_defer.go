@@ -1,4 +1,4 @@
-package sqlx_examples
+package sqlx
 
 import (
 	"log"
